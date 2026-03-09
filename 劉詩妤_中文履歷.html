@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>劉詩妤 — 履歷</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1510;
+    --accent: #8b4a2f;
+    --accent-light: #c4855a;
+    --muted: #6b5f54;
+    --line: #d4c4b4;
+    --bg: #faf8f4;
+    --cream: #f2ede4;
+    --gold: #b8965a;
+  }
+
+  @page { margin: 0; size: A4; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 10.5pt;
+    line-height: 1.7;
+    min-height: 100vh;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative side bar */
+  .page::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--gold) 50%, var(--accent-light) 100%);
+  }
+
+  /* Top geometric accent */
+  .page::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: linear-gradient(225deg, var(--cream) 0%, transparent 60%);
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    padding: 44px 48px 32px 52px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .name-block h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 36pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .name-block .name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14pt;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .name-block .tagline {
+    margin-top: 12px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+    max-width: 380px;
+    border-left: 2px solid var(--accent-light);
+    padding-left: 12px;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8.5pt;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .contact-block a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact-block .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .contact-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    display: inline-block;
+  }
+
+  /* ===== MAIN LAYOUT ===== */
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 0;
+    padding: 0 0 40px 52px;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    padding: 32px 24px 0 0;
+    border-right: 1px solid var(--line);
+  }
+
+  /* ===== CONTENT ===== */
+  .content {
+    padding: 32px 48px 0 32px;
+  }
+
+  /* ===== SECTION TITLES ===== */
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .section {
+    margin-bottom: 26px;
+  }
+
+  /* ===== SIDEBAR BLOCKS ===== */
+  .skill-category {
+    margin-bottom: 16px;
+  }
+
+  .skill-label {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .skill-item {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8.5pt;
+    color: var(--ink);
+    line-height: 1.8;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .skill-item::before {
+    content: '—';
+    color: var(--accent-light);
+    font-size: 7pt;
+    flex-shrink: 0;
+  }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8.5pt;
+  }
+
+  .lang-name { color: var(--ink); }
+  .lang-level {
+    font-size: 7.5pt;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .lang-bar {
+    width: 100%;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 1px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+  }
+
+  .lang-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border-radius: 1px;
+  }
+
+  /* ===== EXPERIENCE ITEMS ===== */
+  .exp-item {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .exp-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: start;
+    margin-bottom: 2px;
+  }
+
+  .exp-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .exp-company {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8.5pt;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .exp-meta {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 7.5pt;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    margin-top: 7px;
+  }
+
+  .exp-bullets li {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8.5pt;
+    color: var(--ink);
+    line-height: 1.75;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+
+  .exp-bullets li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 5pt;
+    top: 5px;
+  }
+
+  .exp-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--line);
+    margin: 18px 0;
+    opacity: 0.5;
+  }
+
+  /* ===== EDUCATION ===== */
+  .edu-item {
+    margin-bottom: 16px;
+  }
+
+  .edu-degree {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .edu-school {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8.5pt;
+    color: var(--accent);
+    margin: 2px 0;
+  }
+
+  .edu-date {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 7.5pt;
+    color: var(--muted);
+  }
+
+  .edu-detail {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8pt;
+    color: var(--muted);
+    margin-top: 5px;
+    line-height: 1.7;
+  }
+
+  /* ===== DECORATIVE ELEMENTS ===== */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 10pt;
+    letter-spacing: 8px;
+    margin: 4px 0 16px;
+    opacity: 0.6;
+  }
+
+  .highlight-box {
+    background: var(--cream);
+    border-left: 3px solid var(--accent-light);
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    margin: 8px 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 8pt;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: white; }
+    .page { max-width: 100%; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name-block">
+      <h1>劉詩妤</h1>
+      <div class="name-en">Ivy Liu</div>
+      <p class="tagline">多語言策略與營運管理專業人才 · 英國金融科技新創 · 跨文化商業拓展</p>
+    </div>
+    <div class="contact-block">
+      <div class="contact-item"><span class="contact-dot"></span>(+44) 7493 935 806</div>
+      <div class="contact-item"><span class="contact-dot"></span>liushihyu1@gmail.com</div>
+      <div class="contact-item"><span class="contact-dot"></span>英國 曼徹斯特</div>
+      <div class="contact-item"><span class="contact-dot"></span><a href="https://linkedin.com/in/shihyu-liu/">linkedin.com/in/shihyu-liu</a></div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Languages -->
+      <div class="section">
+        <div class="section-title">語言能力</div>
+
+        <div>
+          <div class="lang-item"><span class="lang-name">中文（台灣）</span><span class="lang-level">母語</span></div>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+
+          <div class="lang-item"><span class="lang-name">英文</span><span class="lang-level">流利</span></div>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:96%"></div></div>
+
+          <div class="lang-item"><span class="lang-name">日文</span><span class="lang-level">JLPT N1</span></div>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:88%"></div></div>
+
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="section">
+        <div class="section-title">核心技能</div>
+
+        <div class="skill-category">
+          <div class="skill-label">策略與營運</div>
+          <div class="skill-item">流程設計與優化</div>
+          <div class="skill-item">合規治理 / KYC · AML</div>
+          <div class="skill-item">跨部門專案管理</div>
+          <div class="skill-item">市場進入策略</div>
+          <div class="skill-item">數據驅動決策</div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-label">行銷與業務</div>
+          <div class="skill-item">多語言行銷內容製作</div>
+          <div class="skill-item">B2B 客戶關係管理</div>
+          <div class="skill-item">社群媒體經營</div>
+          <div class="skill-item">競品分析與市場調研</div>
+          <div class="skill-item">品牌定位與內容策略</div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-label">工具與軟體</div>
+          <div class="skill-item">Microsoft Office 全套</div>
+          <div class="skill-item">SPSS · R（基礎）</div>
+          <div class="skill-item">Canva · 視覺設計</div>
+          <div class="skill-item">CRM 追蹤與回饋系統</div>
+        </div>
+      </div>
+
+      <!-- Education sidebar note -->
+      <div class="section">
+        <div class="section-title">特色專案</div>
+        <div class="highlight-box">
+          與寶僑（P&G）合作顧問專案，針對法國市場進行品牌定位與數位服務創新研究
+        </div>
+        <div class="highlight-box">
+          碩士論文：以混合方法研究現金回饋 App 的使用者體驗、信任機制與 ESG 消費行為
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-title">學歷</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">行銷管理碩士（MSc in Marketing）</div>
+          <div class="edu-school">曼徹斯特大學（University of Manchester） · 英國</div>
+          <div class="edu-date">2024年9月 — 2025年12月</div>
+          <div class="edu-detail">課程涵蓋：行銷策略、消費者行為、行銷分析、服務行銷、數位行銷、國際行銷、數位商業</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">外國語文學系學士（BA in Foreign Languages and Literatures）</div>
+          <div class="edu-school">國立臺灣大學（NTU） · 台灣</div>
+          <div class="edu-date">2019年9月 — 2024年8月</div>
+          <div class="edu-detail">赴日交換一年；擔任學生大使，協助瑞典學生完成學術專案，並主辦跨文化活動，參與人數逾 150 人</div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="section">
+        <div class="section-title">工作經歷</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">行銷與營運經理</div>
+              <div class="exp-company">NeroPay（英國金融科技新創）</div>
+            </div>
+            <div class="exp-meta">英國 曼徹斯特<br>2025年6月 — 至今</div>
+          </div>
+          <p style="font-family:'Noto Sans TC',sans-serif;font-size:8pt;color:var(--muted);font-style:italic;margin-bottom:4px;">帶領精實跨職能團隊，擴展早期金融科技營運、優化工作流程，並確保多元商戶組合的合規運作</p>
+          <ul class="exp-bullets">
+            <li><strong>策略成長與業務開發：</strong>制定核心戰略並建立關鍵合作夥伴關係，兩個月內將商戶潛在客源提升 25%</li>
+            <li><strong>營運治理與合規：</strong>主導營運治理、法律協調及 KYC/AML 合規作業，快速掌握監管知識，早期識別 95% 高風險申請人</li>
+            <li><strong>流程優化與效率提升：</strong>建立端對端工作流程，提升整體運營效率 30%；設計流程指南，減少支援工作量 40%，並強化法規一致性</li>
+            <li><strong>全球行銷與跨文化管理：</strong>製作多語言行銷素材，提升互動率 40%；主導跨文化專案，推動產品優化</li>
+          </ul>
+        </div>
+
+        <div class="exp-divider"></div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">專案經理</div>
+              <div class="exp-company">Metabiz（行銷顧問公司，專案承攬）</div>
+            </div>
+            <div class="exp-meta">全遠端<br>2025年6月 — 2025年12月</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><strong>高影響力專案管理：</strong>統籌 100+ 個客戶案件（教育科技、人資科技、健康產業），建立工作流程，縮短交付時程 30%</li>
+            <li><strong>內容策略與流程優化：</strong>為 Instagram 與 LinkedIn 設計 B2B 策略，改善互動品質；建立研究與內容 SOP，降低修改循環次數</li>
+            <li><strong>業務關係與市場情報：</strong>與關鍵決策者建立合作關係，確保專案方向一致；執行目標市場分析，拓展業務資源</li>
+          </ul>
+        </div>
+
+        <div class="exp-divider"></div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">活動行銷實習生</div>
+              <div class="exp-company">台大創業中心（Taida Entrepreneurship Centre）</div>
+            </div>
+            <div class="exp-meta">台灣<br>2022年6月 — 2023年1月</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>策劃並執行雙語行銷活動，吸引 300+ 名出席者，達成 25% 互動率，提升品牌知名度</li>
+            <li>管理 2 萬+ 追蹤者社群媒體帳號，透過內容優化將互動率提升 30%</li>
+            <li>與 15+ 位新創創辦人及合作夥伴協調聯繫，貢獻追蹤者成長 10%</li>
+          </ul>
+        </div>
+
+        <div class="exp-divider"></div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">數位行銷實習生</div>
+              <div class="exp-company">韋伯出版（Weber Publication）</div>
+            </div>
+            <div class="exp-meta">台灣<br>2020年7月 — 2020年9月</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>製作數據驅動的宣傳內容，帶動電商銷售額成長 20%</li>
+            <li>與 KOL 及微網紅合作，活動點擊率提升 18%</li>
+            <li>翻譯並在地化產品內容，推動國際流量成長 10%</li>
+          </ul>
+        </div>
+
+        <div class="exp-divider"></div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">英語教師（自由接案 & I-Success 補習班）</div>
+              <div class="exp-company">教育 / 健身教練</div>
+            </div>
+            <div class="exp-meta">台灣 · 遠端<br>2019年9月 — 至今</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>設計個人化學習與健身計畫，達成 100% 大學錄取率、90% 客戶留存率</li>
+            <li>運用數據追蹤與回饋機制，使學生學習成效提升 40%+，體能目標達成率提升 15–20%</li>
+            <li>透過同理溝通建立師生信任關係，再報率提升 50%</li>
+          </ul>
+        </div>
+
+      </div><!-- end section -->
+
+    </div><!-- end content -->
+  </div><!-- end main -->
+
+</div><!-- end page -->
+</body>
+</html>
